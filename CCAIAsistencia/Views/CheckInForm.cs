@@ -172,10 +172,16 @@ public class CheckInForm : Form
 
             var result = await Task.Run(() =>
             {
-                var ok = _fingerService.TryIdentifyStudentByMatch(snapshot, out var match, out var msg,
+                var ok = _fingerService.TryIdentifyStudentByMatch(snapshot, out var match, out var msg, out var timedOut,
                     timeoutMs: 15000, minScore: 60, cancellationToken: _cts.Token);
-                return (ok, match, msg);
+                return (ok, match, msg, timedOut);
             });
+
+            if (result.timedOut)
+            {
+                ResetFingerprintStatusToReady();
+                return;
+            }
 
             SetFingerprintStatus(result.msg, result.ok);
 
@@ -280,10 +286,16 @@ public class CheckInForm : Form
 
                 var result = await Task.Run(() =>
                 {
-                    var ok = _fingerService.TryIdentifyStudentByMatch(snapshot, out var match, out var msg,
+                    var ok = _fingerService.TryIdentifyStudentByMatch(snapshot, out var match, out var msg, out var timedOut,
                         timeoutMs: 15000, minScore: 60, cancellationToken: _cts.Token);
-                    return (ok, match, msg);
+                    return (ok, match, msg, timedOut);
                 });
+
+                if (result.timedOut)
+                {
+                    ResetFingerprintStatusToReady();
+                    continue;
+                }
 
                 SetFingerprintStatus(result.msg, result.ok);
 
@@ -347,8 +359,7 @@ public class CheckInForm : Form
     {
         ClearIdentityFields();
         _lblStatus.Text = string.Empty;
-        _lblFingerStatus.Text = "Listo para leer huella con ZK9500.";
-        _lblFingerStatus.ForeColor = Color.DimGray;
+        ResetFingerprintStatusToReady();
     }
 
     private void ClearIdentityFields()
@@ -382,5 +393,11 @@ public class CheckInForm : Form
         {
             SystemSounds.Hand.Play();
         }
+    }
+
+    private void ResetFingerprintStatusToReady()
+    {
+        _lblFingerStatus.Text = "Listo para leer huella con ZK9500.";
+        _lblFingerStatus.ForeColor = Color.DimGray;
     }
 }

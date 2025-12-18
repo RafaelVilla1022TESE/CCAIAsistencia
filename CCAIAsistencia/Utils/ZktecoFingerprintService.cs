@@ -155,12 +155,14 @@ public sealed class ZktecoFingerprintService : IDisposable
     IEnumerable<Alumno> students,
     out Alumno? match,
     out string message,
+    out bool timedOut,
     int timeoutMs = 15000,
     int minScore = 60,
     CancellationToken cancellationToken = default)
     {
         match = null;
         message = "";
+        timedOut = false;
 
         lock (_sync)
         {
@@ -198,7 +200,8 @@ public sealed class ZktecoFingerprintService : IDisposable
                     Thread.Sleep(120);
                 }
 
-                message = $"No se detectó huella (timeout).";
+                message = string.Empty;
+                timedOut = true;
                 return false;
             }
 
