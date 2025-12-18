@@ -151,7 +151,7 @@ public class CheckInForm : Form
             SetFingerprintStatus("No hay coincidencias.", success: false);
             _lblName.Text = "-";
             _picPhoto.Image = null;
-            SystemSounds.Hand.Play();
+            PlayFailureSound();
             ScheduleClearFields();
             return;
         }
@@ -182,7 +182,8 @@ public class CheckInForm : Form
             if (!result.ok || result.match == null)
             {
                 SetStatus(result.msg, success: false);
-                SystemSounds.Hand.Play();
+                ClearIdentityFields();
+                PlayFailureSound();
                 ScheduleClearFields();
                 return;
             }
@@ -194,6 +195,7 @@ public class CheckInForm : Form
         {
             SetStatus($"Error al leer huella: {ex.Message}", success: false);
             SetFingerprintStatus("Error con el lector.", success: false);
+            ClearIdentityFields();
             ScheduleClearFields();
         }
         finally
@@ -215,7 +217,7 @@ public class CheckInForm : Form
         _repository.AddAttendanceRecord(employee.Id, "Checador");
         SetStatus("Registro correcto.", success: true);
         SetFingerprintStatus("Huella validada.", success: true);
-        SystemSounds.Asterisk.Play();
+        PlaySuccessSound();
         ScheduleClearFields();
     }
 
@@ -293,6 +295,8 @@ public class CheckInForm : Form
                 else
                 {
                     SetStatus(result.msg, success: false);
+                    ClearIdentityFields();
+                    PlayFailureSound();
                     ScheduleClearFields();
                 }
             }
@@ -300,6 +304,8 @@ public class CheckInForm : Form
             {
                 SetStatus($"Error al leer huella: {ex.Message}", success: false);
                 SetFingerprintStatus("Error con el lector.", success: false);
+                ClearIdentityFields();
+                PlayFailureSound();
                 ScheduleClearFields();
             }
             finally
@@ -339,11 +345,42 @@ public class CheckInForm : Form
 
     private void ResetCheckInFields()
     {
-        _txtMatricula.Text = string.Empty;
-        _lblName.Text = "-";
+        ClearIdentityFields();
         _lblStatus.Text = string.Empty;
         _lblFingerStatus.Text = "Listo para leer huella con ZK9500.";
         _lblFingerStatus.ForeColor = Color.DimGray;
+    }
+
+    private void ClearIdentityFields()
+    {
+        _txtMatricula.Text = string.Empty;
+        _lblName.Text = "-";
         _picPhoto.Image = null;
+    }
+
+    private void PlaySuccessSound()
+    {
+        try
+        {
+            Console.Beep(1200, 200);
+            Console.Beep(1500, 200);
+        }
+        catch
+        {
+            SystemSounds.Asterisk.Play();
+        }
+    }
+
+    private void PlayFailureSound()
+    {
+        try
+        {
+            Console.Beep(400, 250);
+            Console.Beep(300, 300);
+        }
+        catch
+        {
+            SystemSounds.Hand.Play();
+        }
     }
 }

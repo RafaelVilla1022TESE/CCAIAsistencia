@@ -198,7 +198,7 @@ public sealed class ZktecoFingerprintService : IDisposable
                     Thread.Sleep(120);
                 }
 
-                message = $"No se detectó huella (timeout). último código={lastRet}";
+                message = $"No se detectó huella (timeout).";
                 return false;
             }
 
