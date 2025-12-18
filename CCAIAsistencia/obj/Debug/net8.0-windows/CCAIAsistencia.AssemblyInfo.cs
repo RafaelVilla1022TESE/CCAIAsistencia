@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CCAIAsistencia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+393135ec97d1aa920fada5e34eb5f5f7a79b71f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f2220ea9c3b91d0f96d40f77da613fb989e4ff7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CCAIAsistencia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CCAIAsistencia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
