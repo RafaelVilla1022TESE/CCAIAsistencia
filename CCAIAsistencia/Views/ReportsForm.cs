@@ -1,6 +1,5 @@
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using CCAIAsistencia.Data;
@@ -39,7 +38,7 @@ public class ReportsForm : Form
         Text = "Reportes";
         ClientSize = new Size(1000, 680);
         MinimumSize = new Size(900, 600);
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "reports.ico"));
+        Icon = IconLoader.Load("reports");
 
         _grid = new DataGridView
         {

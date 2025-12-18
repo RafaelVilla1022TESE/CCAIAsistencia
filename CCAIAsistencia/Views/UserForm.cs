@@ -1,9 +1,9 @@
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using CCAIAsistencia.Data;
 using CCAIAsistencia.Models;
+using CCAIAsistencia.Utils;
 
 namespace CCAIAsistencia.Views;
 
@@ -44,7 +44,7 @@ public class UserForm : Form
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "user_add.ico"));
+        Icon = IconLoader.Load("user_add");
 
         var lblUser = new Label { Text = "Usuario", Location = new Point(20, 20), AutoSize = true };
         _txtUsername = new TextBox { Location = new Point(120, 16), Width = 260, MaxLength = 100 };

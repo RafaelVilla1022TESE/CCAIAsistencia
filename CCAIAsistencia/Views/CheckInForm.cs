@@ -1,5 +1,4 @@
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Media;
 using System.Threading;
@@ -50,7 +49,7 @@ public class CheckInForm : Form
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "checkin.ico"));
+        Icon = IconLoader.Load("checkin");
 
         var lblKey = new Label { Text = "Matricula:", Location = new Point(40, 40), AutoSize = true, Font = new Font(DefaultFont, FontStyle.Bold) };
         _txtMatricula = new TextBox

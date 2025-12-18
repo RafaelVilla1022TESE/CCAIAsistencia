@@ -96,3 +96,13 @@ C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CC
 C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\student_add.ico
 C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\users.ico
 C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\user_add.ico
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\obj\Debug\net8.0-windows\CCAIAsistencia.sourcelink.json
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\checkin.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\dashboard.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\fingerprint.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\login.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\reports.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\students.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\student_add.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\users.png
+C:\Users\tese.DESKTOP-S2D1OE9\Downloads\ZKFinger SDK V10.0-Windowsl\Proyectos\CCAIAsistencia\bin\Debug\net8.0-windows\Assets\Icons\user_add.png

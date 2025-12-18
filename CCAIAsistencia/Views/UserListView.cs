@@ -1,6 +1,5 @@
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using CCAIAsistencia.Data;
@@ -43,7 +42,7 @@ public class UserListView : Form
         StartPosition = FormStartPosition.CenterParent;
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "users.ico"));
+        Icon = IconLoader.Load("users");
 
         var topPanel = new Panel
         {

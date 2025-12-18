@@ -1,6 +1,5 @@
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using CCAIAsistencia.Data;
@@ -43,7 +42,7 @@ public class AlumnoListView : Form
         StartPosition = FormStartPosition.CenterParent;
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "students.ico"));
+        Icon = IconLoader.Load("students");
 
         var topPanel = new Panel
         {

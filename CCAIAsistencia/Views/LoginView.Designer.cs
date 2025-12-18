@@ -140,7 +140,7 @@ partial class LoginView
         StartPosition = FormStartPosition.CenterScreen;
         Text = "CCAIAsistencia - Login";
         AcceptButton = btnLogin;
-        Icon = new System.Drawing.Icon(System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "login.ico"));
+        Icon = CCAIAsistencia.Utils.IconLoader.Load("login");
         ResumeLayout(false);
         PerformLayout();
     }

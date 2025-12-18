@@ -1,5 +1,4 @@
 using System.Drawing;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using CCAIAsistencia.Utils;
@@ -37,7 +36,7 @@ public class FingerprintCaptureForm : Form
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
-        Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "Assets", "Icons", "fingerprint.ico"));
+        Icon = IconLoader.Load("fingerprint");
 
         _lblStatus = new Label
         {
